@@ -3,18 +3,18 @@
   <h1>Kaalu teistndamine</h1>
   <h4>Siseta kaal kilogrammides:</h4>
   <input type="number" min="0" v-model="kg">
-  <table>
+  <table v-if="kg !== 0">
       <tr>
           <td>Grammid</td>
-          <td>{{ `${kg * 1000} g` }}</td>
+          <td>{{ convertKg(1000) + ' g' }}</td>
       </tr>
       <tr>
           <td>Naelad</td>
-          <td></td>
+          <td>{{ convertKg(2.20462262) + ' lb' }}</td>
       </tr>
       <tr>
           <td>Untsid</td>
-          <td></td>
+          <td>{{ convertKg(35.2739619) + ' oz' }}</td>
       </tr>
   </table>
   
@@ -30,7 +30,9 @@ export default {
         }
     },
     methods: {
-     
+     convertKg(multiplier) {
+        return (this.kg !== 0) ? (this.kg * multiplier).toFixed(2) : 0
+     }
     }
 }
 </script>
