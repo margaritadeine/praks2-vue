@@ -1,0 +1,40 @@
+<template>
+  <div>
+  <h1>Kaalu teistndamine</h1>
+  <h4>Siseta kaal kilogrammides:</h4>
+  <input type="number" min="0" v-model="kg">
+  <table>
+      <tr>
+          <td>Grammid</td>
+          <td>{{ `${kg * 1000} g` }}</td>
+      </tr>
+      <tr>
+          <td>Naelad</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Untsid</td>
+          <td></td>
+      </tr>
+  </table>
+  
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Konverter',
+  data() {
+      return {
+          kg: 0
+        }
+    },
+    methods: {
+     
+    }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+</style>
